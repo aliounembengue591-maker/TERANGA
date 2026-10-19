@@ -1,0 +1,8 @@
+{
+  "name": "  TERANGA BEAUTY by DIGITaline",
+  "description": "Une marketplace mobile-first pour la mode et beauté sénégalaise avec gestion vendeuses, commandes, commission 10% et paiement Wave / Orange Money.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

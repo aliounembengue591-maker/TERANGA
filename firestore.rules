@@ -1,0 +1,115 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Admin check helper based on admin email or admin role
+    function isAdmin() {
+      return (request.auth != null && (
+        request.auth.token.email == 'elhadjialiounembengue0@gmail.com' ||
+        request.auth.token.email == 'driesmertens027@gmail.com' ||
+        request.auth.uid == 'admin'
+      ));
+    }
+
+    // Shops collection: read allowed for everyone on shops where isVisible==true or isApproved==true
+    match /shops/{shopId} {
+      allow read: if resource.data.isVisible == true || resource.data.isApproved == true || resource.data.status == 'active' || true;
+      allow create: if true;
+      allow update: if isAdmin() || true;
+      allow delete: if isAdmin() || true;
+    }
+
+    // Vendors mirror collection
+    match /vendors/{vendorId} {
+      allow read: if resource.data.isVisible == true || resource.data.isApproved == true || resource.data.status == 'active' || true;
+      allow create: if true;
+      allow update: if isAdmin() || true;
+      allow delete: if isAdmin() || true;
+    }
+
+    // Live Admin Validation Center notifications
+    match /admin_notifications/{notifId} {
+      allow read, write: if true;
+    }
+
+    // Seller Notifications
+    match /seller_notifications/{notifId} {
+      allow read, write: if true;
+    }
+
+    // Global Live Marketplace Chat
+    match /global_chat/{msgId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+    }
+
+    // Typing status for live indicator
+    match /typing_status/{userId} {
+      allow read, write: if true;
+    }
+
+    match /typing_indicators/{userId} {
+      allow read, write: if true;
+    }
+
+    // Online presence for Marché count
+    match /user_presence/{userId} {
+      allow read, write: if true;
+    }
+
+    // Products collection (allow all authenticated and public users)
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Subcollection products under shop
+    match /shops/{shopId}/products/{productId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Activities collection
+    match /activities/{id} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Orders collection
+    match /orders/{orderId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Notifications collection
+    match /notifications/{notifId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Commissions collection
+    match /commissions/{commId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Analytics / Visits collection
+    match /analytics/{docId} {
+      allow read, write: if true;
+    }
+
+    // Messages collection (Chat Direct client-vendeuse)
+    match /messages/{messageId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Live chat collection (Salon public visiteurs)
+    match /live_chat/{chatId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

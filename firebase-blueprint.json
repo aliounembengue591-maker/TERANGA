@@ -1,0 +1,224 @@
+{
+  "entities": {
+    "Vendor": {
+      "title": "Vendor",
+      "description": "Boutique or vendor profile in Teranga Beauty marketplace",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "ownerName": { "type": "string" },
+        "phone": { "type": "string" },
+        "neighborhood": { "type": "string" },
+        "avatar": { "type": "string" },
+        "coverImage": { "type": "string" },
+        "status": { "type": "string" },
+        "bio": { "type": "string" },
+        "joinedDate": { "type": "string" },
+        "balance": { "type": "number" },
+        "totalSales": { "type": "number" },
+        "isPro": { "type": "boolean" },
+        "creatorTag": { "type": "string" },
+        "categoryLabel": { "type": "string" }
+      },
+      "required": ["id", "name", "phone", "neighborhood", "status"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Product listed by a vendor",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "promoPrice": { "type": "number" },
+        "category": { "type": "string" },
+        "vendorId": { "type": "string" },
+        "vendorName": { "type": "string" },
+        "vendorWhatsApp": { "type": "string" },
+        "status": { "type": "string" },
+        "image": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["id", "name", "price", "category", "vendorId", "status"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order placed with a vendor",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "vendorId": { "type": "string" },
+        "vendorName": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "commissionAmount": { "type": "number" },
+        "vendorPayoutAmount": { "type": "number" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "status": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "vendorId", "totalAmount", "status"]
+    },
+    "VendorNotification": {
+      "title": "VendorNotification",
+      "description": "Real-time activity and approval alerts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "vendorId": { "type": "string" },
+        "type": { "type": "string" },
+        "message": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "vendorId", "type", "message"]
+    },
+    "CommissionRecord": {
+      "title": "CommissionRecord",
+      "description": "Platform 10 percent commission bookkeeping record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orderId": { "type": "string" },
+        "vendorName": { "type": "string" },
+        "saleAmount": { "type": "number" },
+        "commissionAmount": { "type": "number" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "orderId", "vendorName", "commissionAmount"]
+    },
+    "LiveChatMessage": {
+      "title": "LiveChatMessage",
+      "description": "Public community live chat message between site visitors and vendors",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorRole": { "type": "string" },
+        "authorQuarter": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "authorName", "text"]
+    },
+    "AdminNotification": {
+      "title": "AdminNotification",
+      "description": "Live administrative alerts for new shop and product submissions needing approval",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "shopId": { "type": "string" },
+        "shopName": { "type": "string" },
+        "ownerName": { "type": "string" },
+        "ownerPhone": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "productName": { "type": "string" },
+        "productImage": { "type": "string" },
+        "price": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "status": { "type": "string" },
+        "read": { "type": "boolean" },
+        "rejectionReason": { "type": "string" }
+      },
+      "required": ["type", "shopId", "shopName", "status"]
+    },
+    "GlobalChatMessage": {
+      "title": "GlobalChatMessage",
+      "description": "Global live chat message visible by all users on Marché Live",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "shopName": { "type": "string" },
+        "avatar": { "type": "string" },
+        "role": { "type": "string" },
+        "message": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "replyToId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "userName", "role", "message"]
+    },
+    "TypingStatus": {
+      "title": "TypingStatus",
+      "description": "Real-time user typing status for Marché Live",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "isTyping": { "type": "boolean" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "userName", "isTyping"]
+    },
+    "UserPresence": {
+      "title": "UserPresence",
+      "description": "Online presence heartbeat for Marché Live users",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "lastSeen": { "type": "string" }
+      },
+      "required": ["userId", "lastSeen"]
+    }
+  },
+  "firestore": {
+    "/vendors/{vendorId}": {
+      "schema": "#/entities/Vendor",
+      "description": "All boutiques created by sellers, validated or pending"
+    },
+    "/shops/{shopId}": {
+      "schema": "#/entities/Vendor",
+      "description": "All shops created by sellers, shared across devices"
+    },
+    "/products/{productId}": {
+      "schema": "#/entities/Product",
+      "description": "Products listed across boutiques"
+    },
+    "/shops/{shopId}/products/{productId}": {
+      "schema": "#/entities/Product",
+      "description": "Products belonging to a specific shop subcollection"
+    },
+    "/activities/{id}": {
+      "schema": "#/entities/VendorNotification",
+      "description": "Live activities feed"
+    },
+    "/orders/{orderId}": {
+      "schema": "#/entities/Order",
+      "description": "Customer orders per boutique"
+    },
+    "/notifications/{notifId}": {
+      "schema": "#/entities/VendorNotification",
+      "description": "Real-time alerts for product touches, additions and boutique approvals"
+    },
+    "/commissions/{commId}": {
+      "schema": "#/entities/CommissionRecord",
+      "description": "Bookkeeping records for commissions"
+    },
+    "/live_chat/{msgId}": {
+      "schema": "#/entities/LiveChatMessage",
+      "description": "Live real-time community chat messages between site visitors and sellers"
+    },
+    "/admin_notifications/{notifId}": {
+      "schema": "#/entities/AdminNotification",
+      "description": "Live queue of pending boutique and product approvals for administrator"
+    },
+    "/global_chat/{chatId}": {
+      "schema": "#/entities/GlobalChatMessage",
+      "description": "Global live marketplace chat messages"
+    },
+    "/typing_status/{userId}": {
+      "schema": "#/entities/TypingStatus",
+      "description": "Real-time typing status of users"
+    },
+    "/user_presence/{userId}": {
+      "schema": "#/entities/UserPresence",
+      "description": "Online presence records of active market visitors"
+    }
+  }
+}
+

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" width="500" height="120">
+  <defs>
+    <linearGradient id="headGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF6CC"/>
+      <stop offset="15%" stop-color="#F7D87E"/>
+      <stop offset="40%" stop-color="#DEA83A"/>
+      <stop offset="70%" stop-color="#BD8524"/>
+      <stop offset="100%" stop-color="#915E12"/>
+    </linearGradient>
+  </defs>
+  <!-- Gold T -->
+  <g transform="translate(60, 60) scale(0.65)">
+    <path d="
+  M -70,-80
+  L 70,-80
+  L 70,-56
+  C 67,-70 58,-73 44,-73
+  L 12,-73
+  L 12,58
+  C 24,59 38,61 52,64
+  L 52,73
+  L -52,73
+  L -52,64
+  C -38,61 -24,59 -12,58
+  L -12,-73
+  L -44,-73
+  C -58,-73 -67,-70 -70,-56
+  Z
+" fill="url(#headGold)"/>
+  </g>
+  <!-- Side by side text -->
+  <text x="130" y="65"
+        font-family="'Liberation Serif', 'Times New Roman', Georgia, serif"
+        font-size="34"
+        font-weight="bold"
+        letter-spacing="5"
+        fill="url(#headGold)">
+    TERANGA BEAUTY
+  </text>
+  <text x="132" y="92"
+        font-family="'Liberation Sans', sans-serif"
+        font-size="11"
+        font-weight="500"
+        letter-spacing="4"
+        fill="url(#headGold)"
+        opacity="0.9">
+    SÉNÉGAL • MAISON DE BEAUTÉ
+  </text>
+</svg>

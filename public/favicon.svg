@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF6CC"/>
+      <stop offset="30%" stop-color="#F7D87E"/>
+      <stop offset="70%" stop-color="#DEA83A"/>
+      <stop offset="100%" stop-color="#915E12"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#681427"/>
+  <g transform="translate(32, 34) scale(0.24)">
+    <path d="
+  M -70,-80
+  L 70,-80
+  L 70,-56
+  C 67,-70 58,-73 44,-73
+  L 12,-73
+  L 12,58
+  C 24,59 38,61 52,64
+  L 52,73
+  L -52,73
+  L -52,64
+  C -38,61 -24,59 -12,58
+  L -12,-73
+  L -44,-73
+  C -58,-73 -67,-70 -70,-56
+  Z
+" fill="url(#favGold)"/>
+  </g>
+</svg>

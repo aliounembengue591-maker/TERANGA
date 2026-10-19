@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="luxeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF6CC"/>
+      <stop offset="15%" stop-color="#F7D87E"/>
+      <stop offset="40%" stop-color="#DEA83A"/>
+      <stop offset="70%" stop-color="#BD8524"/>
+      <stop offset="100%" stop-color="#915E12"/>
+    </linearGradient>
+
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DEA83A" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#F7D87E" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFF6CC" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#F7D87E" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#DEA83A" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="bgGradient" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#7A192F"/>
+      <stop offset="65%" stop-color="#5F1122"/>
+      <stop offset="100%" stop-color="#470916"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Burgundy rounded rectangle with exact soft corners -->
+  <rect width="512" height="512" rx="105" ry="105" fill="url(#bgGradient)"/>
+
+  <!-- Serif Monogram T -->
+  <g transform="translate(256, 205)">
+    <path d="
+  M -70,-80
+  L 70,-80
+  L 70,-56
+  C 67,-70 58,-73 44,-73
+  L 12,-73
+  L 12,58
+  C 24,59 38,61 52,64
+  L 52,73
+  L -52,73
+  L -52,64
+  C -38,61 -24,59 -12,58
+  L -12,-73
+  L -44,-73
+  C -58,-73 -67,-70 -70,-56
+  Z
+" fill="url(#luxeGold)"/>
+  </g>
+
+  <!-- Refined delicate horizontal divider line -->
+  <rect x="186" y="298" width="140" height="1.5" rx="0.75" fill="url(#lineGrad)"/>
+
+  <!-- TERANGA BEAUTY text in elegant Liberation Serif -->
+  <text x="256" y="348"
+        font-family="'Liberation Serif', 'Times New Roman', serif"
+        font-size="32"
+        font-weight="bold"
+        letter-spacing="5"
+        text-anchor="middle"
+        fill="url(#luxeGold)">
+    TERANGA BEAUTY
+  </text>
+
+  <!-- Subtitle -->
+  <text x="256" y="380"
+        font-family="'Liberation Sans', sans-serif"
+        font-size="11.5"
+        font-weight="normal"
+        letter-spacing="4"
+        text-anchor="middle"
+        fill="url(#luxeGold)"
+        opacity="0.9">
+    SÉNÉGAL • MAISON DE BEAUTÉ
+  </text>
+</svg>

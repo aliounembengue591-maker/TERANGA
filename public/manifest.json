@@ -1,0 +1,30 @@
+{
+  "short_name": "TERANGA BEAUTY",
+  "name": "TERANGA BEAUTY - Maison de Beauté Sénégal",
+  "description": "La marketplace de luxe pour la mode et beauté sénégalaise à Dakar.",
+  "icons": [
+    {
+      "src": "/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#681427",
+  "theme_color": "#681427",
+  "display": "standalone",
+  "orientation": "portrait"
+}

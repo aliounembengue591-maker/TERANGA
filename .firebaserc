@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gen-lang-client-0777029768"
+  },
+  "targets": {
+    "gen-lang-client-0777029768": {
+      "hosting": {
+        "teranga-beauty-luxe": [
+          "teranga-beauty-luxe"
+        ]
+      }
+    }
+  }
+}
