@@ -17,7 +17,7 @@ export const ShopCatalogueModal: React.FC = () => {
 
   // Products belonging to this shop
   const vendorProducts = products.filter(
-    (p) => p.vendorId === catalogueVendor.id && (p.status === 'approved' || !p.status)
+    (p) => p.vendorId === catalogueVendor.id
   );
 
   const handleWhatsAppContact = () => {
